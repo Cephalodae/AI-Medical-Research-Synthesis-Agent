@@ -1,9 +1,24 @@
 <html lang="en">
+
 <head>
-<title>Synthesis Agent</title>
-    </head>
+    <title>Synthesis Agent</title>
+    <style>
+    body {min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    h1 {margin-top: 30px; margin-bottom: 15px; font-size: 30px}
+    #background {border-radius: 15px 50px; background: #89CFF0; width: 600px; height: 500px; flex-direction: column; justify-content: flex-start; align-items: center; padding: 30px; box-sizing: border-box; display: flex;}
+    #background2 {border-radius: 15px 50px; background: #FFFFFF; width: 200px; height: 100px; flex-direction: column; justify-content: flex-start; align-items: center; padding: 10px; box-sizing: border-box; display: flex;}
+    #prompt {width: 90%; height: 20%; margin-bottom: 15px; font-size: 14px}
+    #documents {margin-left: 20%}
+    </style>
+</head>
+
 <body>
-<p><u>Upload files below</u></p>
-<input type="file" id="documents" name="documents">
-    </body>
+    <div id="background">
+        <h1>AI Medical Research Synthesis Agent</h1>
+        <textarea id="prompt" name="prompt" placeholder="Enter document synthesis prompt.."></textarea>
+        <div id="background2">
+            <input type="file" id="documents" name="documents" multiple>
+        </div>
+    </div>
+</body>
 </html>
