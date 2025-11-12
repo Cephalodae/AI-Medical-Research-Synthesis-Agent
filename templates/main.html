@@ -12,14 +12,15 @@
     #text_top {margin-top: 20px; margin-bottom: 15px; font-size: 30px}
     #back_menu {border-radius: 15px 50px; background: #FFFFFF; width: 485px; height: 35px; flex-direction: row; justify-content: flex-start; align-items: center; box-sizing: border-box; display: flex;}
     #prompt {width: 90%; height: 40%; margin-bottom: 15px; font-size: 14px; resize: none}
-    #text_docu {margin-left: 4%}
+    #text_docu {margin-left: 12px;}
     #input_docu {margin-left: 2%}
     #text_credits {display: flex; flex-direction: column; justify-content: start; align-items: center; font-family: "DM Sans", sans-serif;}
+    #button_submit:hover {background: #e6f4ff;}
     </style>
 </head>
 
 <body>
-    <form action="results" method="post">
+    <form action="results" method="post" enctype="multipart/form-data">
         <div id="back_main">
         <p id="text_top">AI Medical Research Synthesis Agent</p>
         <textarea id="prompt" name="prompt" placeholder="Enter document synthesis prompt.."></textarea>
