@@ -27,5 +27,5 @@ def results_page():
 
     return render_template('results.html', ai_response=ai_response)
 
-if __name__ == '__main__':
-    app.run()
+#if __name__ == '__main__':
+#app.run()

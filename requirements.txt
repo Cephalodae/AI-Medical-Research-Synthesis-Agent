@@ -1,0 +1,9 @@
+flask
+gunicorn
+langchain-community
+langchain-text-splitters
+ibm-watsonx-ai
+langchain-ibm
+faiss-cpu
+pypdf
+pymupdf
