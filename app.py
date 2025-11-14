@@ -1,6 +1,7 @@
-import fitz
 from flask import Flask, render_template, request, redirect, url_for
-import time
+import tempfile
+import rag
+import os
 
 app = Flask(__name__)
 
@@ -13,17 +14,16 @@ def results_page():
     pdfs = request.files.getlist('input_docu')
     prompt = request.form.get('prompt')
 
-    extracted_text = ""
-    for pdf in pdfs:
-        pdf_convert = pdf.read()
+    pdf_paths = []
+    with tempfile.TemporaryDirectory() as pdf_loc:
+        for pdf in pdfs:
+            if pdf and pdf.filename:
+                path = os.path.join(pdf_loc, pdf.filename)
+                pdf.save(path)
+                pdf_paths.append(path)
 
-        fitz_pdf = fitz.open(stream=pdf_convert)
-        for page in fitz_pdf:
-            extracted_text += page.get_text()
-        fitz_pdf.close()
-
-    # GRANITE (temp code below)
-    ai_response = "Prompt: \n" + prompt + "\nExtracted text: " + extracted_text
+    # CALL rag.py HERE!
+    ai_response = "Path: " + pdf_paths[0] + "Prompt: \n" + prompt
 
     return render_template('results.html', ai_response=ai_response)
 
