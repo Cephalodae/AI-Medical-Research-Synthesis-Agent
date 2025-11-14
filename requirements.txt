@@ -7,7 +7,6 @@ langchain-ibm
 langchain_chroma
 langchain_pymupdf4llm
 langchain_core
-getpass
 faiss-cpu
 pypdf
 pymupdf
