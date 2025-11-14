@@ -2,8 +2,12 @@ flask
 gunicorn
 langchain-community
 langchain-text-splitters
-ibm-watsonx-ai
+ibm_watsonx_ai
 langchain-ibm
+langchain_chroma
+langchain_pymupdf4llm
+langchain_core
+getpass
 faiss-cpu
 pypdf
 pymupdf
