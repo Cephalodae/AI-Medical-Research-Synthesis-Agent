@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import tempfile
-import rag
+#from rag import FUNCTION HERE
 import os
 
 app = Flask(__name__)
@@ -22,8 +22,8 @@ def results_page():
                 pdf.save(path)
                 pdf_paths.append(path)
 
-    # CALL rag.py HERE!
-    ai_response = "Path: " + pdf_paths[0] + "Prompt: \n" + prompt
+    ai_response = "error"
+    #ai_response = CALL rag.py HERE!
 
     return render_template('results.html', ai_response=ai_response)
 
