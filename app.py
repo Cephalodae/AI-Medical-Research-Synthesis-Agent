@@ -11,6 +11,7 @@ def documents_page():
 @app.route('/results', methods=['POST'])
 def results_page():
     pdfs = request.files.getlist('input_docu')
+    prompt = request.form.get('prompt')
 
     extracted_text = ""
     for pdf in pdfs:
@@ -21,7 +22,10 @@ def results_page():
             extracted_text += page.get_text()
         fitz_pdf.close()
 
-    return render_template('results.html', extracted_text=extracted_text)
+    # GRANITE (temp code below)
+    ai_response = "Prompt: \n" + prompt + "\nExtracted text: " + extracted_text
+
+    return render_template('results.html', ai_response=ai_response)
 
 if __name__ == '__main__':
     app.run()
