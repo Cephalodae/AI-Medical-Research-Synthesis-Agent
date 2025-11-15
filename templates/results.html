@@ -17,15 +17,13 @@
 </head>
 
 <body>
-    <form action="/" method="post">
-        <div id="back_main">
+    <div id="back_main">
             <p id="text_top"><u>Research Synthesis Results</u></p>
             <textarea readonly id="results" name="results">{{ai_response}}</textarea>
             <div id="back_menu">
-                <button id="button_submit">Back</button>
+                <button id="button_submit" type="button" onclick="window.location.href='/'">Back</button>
             </div>
     </div>
         <p id="text_credits">@2025 Cephalodae - Using IBM Cloud</p>
-    </form>
 </body>
 </html>
