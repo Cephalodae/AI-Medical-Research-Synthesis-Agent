@@ -13,14 +13,14 @@
     #back_menu {border-radius: 15px 50px; background: #FFFFFF; width: 485px; height: 35px; flex-direction: row; justify-content: flex-start; align-items: center; box-sizing: border-box; display: flex;}
     #prompt {width: 90%; height: 40%; margin-bottom: 15px; font-size: 14px; resize: none}
     #text_docu {margin-left: 30px;}
-    #input_docu {margin-left: 2%}
+    #input_docu {margin-left: 2%; max-width: 250px}
     #text_credits {display: flex; flex-direction: column; justify-content: start; align-items: center; font-family: "DM Sans", sans-serif;}
     #button_submit:hover {background: #e6f4ff;}
     </style>
 </head>
 
 <body>
-    <form action="/results" method="post" enctype="multipart/form-data">
+    <form action="/results" method="post" enctype="multipart/form-data" onsubmit="let btn = getElementById('button_submit'); btn.disabled = true; btn.innerHTML = 'Waiting';">
         <div id="back_main">
         <p id="text_top">AI Medical Research Synthesis Agent</p>
         <textarea id="prompt" name="prompt" placeholder="Enter document synthesis prompt.."></textarea>
